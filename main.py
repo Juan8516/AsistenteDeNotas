@@ -1,19 +1,17 @@
+from usuarios import acciones 
+
 #Preguntas del asistente
 print("""
       - registro
       - login
       """)
 
-accion = input("Que quieres hacer ?: ")
+hazEl = acciones.Acciones()
+accion = input("\nQue quieres hacer ?: ")
 
 if accion == "registro":
-    print("\nOk, vamos a registrarte !!")
-    nombre    = input("Ingresa tu nombre: ")
-    apellidos = input("Ingresa tus apellidos: ")
-    email     = input("Ingresa tu email: ")
-    password  = input("Ingresa tu contraseña: ")
+    hazEl.registro()
+
     
 elif accion == "login":
-    print("Ingresa usuario y contraseña: ")
-    email     = input("Ingresa tu email: ")
-    password  = input("Ingresa tu contraseña: ")
+    hazEl.login()
