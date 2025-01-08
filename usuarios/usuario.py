@@ -1,3 +1,15 @@
+import mysql.connector
+
+dataBase = mysql.connector.cursor(
+    host="localhost",
+    user="root",
+    passw="",
+    database="basedatos_asistente",
+    port=127.0
+) 
+
+cursor = database.cursor(buffered=True)
+
 class Usuario:
     
     def __init__(self, nombre, apellidos, email, password):
