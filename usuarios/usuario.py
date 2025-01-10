@@ -1,16 +1,10 @@
-import mysql.connector
+import usuarios.conexion as conexion
 import datetime
 import hashlib
 
-dataBase = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="basedatos_asistente",
-    port=3306
-) 
-
-cursor = dataBase.cursor(buffered=True)
+connect = conexion.conectar()
+database = connect[0]
+cursor = connect[1]
 
 class Usuario:
     
