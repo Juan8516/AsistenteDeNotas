@@ -14,7 +14,7 @@ class Acciones:
         registro = usuario.registrar()
         
         if registro[0] >= 1:
-            print(f"Registro para {registro[1].nombre} se ha registrado correctamente con el email {registro[1].email}!!!!")
+            print(f"\nRegistro para {registro[1].nombre} se ha registrado correctamente con el email {registro[1].email}!!!!")
         else:
             print("No se ha registrado correctamente !!!")
     
