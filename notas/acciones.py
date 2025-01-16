@@ -9,7 +9,7 @@ class Acciones:
         descripcion = input("Ingresa el contenido: ")
         
         nota = modelo.Nota(usuario[0], titulo, descripcion)
-        guardar = nota.guardar
+        guardar = nota.guardar()
         
         if guardar[0] >= 1:
             print(f"Se ha guardado la nota {nota.titulo} correctamente !!!")
