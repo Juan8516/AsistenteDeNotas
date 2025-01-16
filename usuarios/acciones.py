@@ -56,13 +56,16 @@ class Acciones:
         if accion == "crear":
             hazEl.crear(usuario)
             print("vamos a crear nota")
-            self.proximasAcciones()
+            self.proximasAcciones(usuario)
+            
         elif accion == "mostrar":
-            print("vamos a ver tus notas")
-            self.proximasAcciones()
+            hazEl.mostrar(usuario)
+            self.proximasAcciones(usuario)
+            
         elif accion == "eliminar":
             print("selecciona una nota para eliminar")
-            self.proximasAcciones()
+            self.proximasAcciones(usuario)
+            
         elif accion == 'salir':
             print(f"Hasta pronto {usuario[1]}")
             exit()
