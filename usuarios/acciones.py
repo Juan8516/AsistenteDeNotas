@@ -22,25 +22,19 @@ class Acciones:
     def login(self):
         print("\nIngresa usuario y contraseña: ")
         
-        try:
-            email     = input("Ingresa tu email: ")
-            password  = input("Ingresa tu contraseña: ")
-            
-            usuario = modelo.Usuario('', '', email, password)
-            login = usuario.identificar()
-            
-            if login:
-                if email == login[3]:
-                    print(f"\nBienvenido {login[1]} estas registrado desde {login[5]}")
-                    self.proximasAcciones(login)
-                
-        except Exception as e:
-            print(type(e))
-            print(type(e).__name__)
-            print("Usuario y/o contraseña incorrecta intentalo de nuevo !!!!")        
+        email = input("Ingresa tu email: ")
+        password  = input("Ingresa tu contraseña: ")
+        
+        usuario = modelo.Usuario('', '', email, password)
+        login = usuario.identificar()
+        
+        if login:
+            if email == login[3]:
+                print(f"\nBienvenido {login[1]} estas registrado desde {login[5]}")
+                self.proximasAcciones(login)  
     
     def proximasAcciones(self, usuario):
-        print("Que accion quieres realizar ?")
+        print("\nQue accion quieres realizar ?")
         
         print("""\n
             Acciones disponibles:
@@ -55,7 +49,6 @@ class Acciones:
         
         if accion == "crear":
             hazEl.crear(usuario)
-            print("vamos a crear nota")
             self.proximasAcciones(usuario)
             
         elif accion == "mostrar":
@@ -63,7 +56,7 @@ class Acciones:
             self.proximasAcciones(usuario)
             
         elif accion == "eliminar":
-            print("selecciona una nota para eliminar")
+            hazEl.borrar(usuario)
             self.proximasAcciones(usuario)
             
         elif accion == 'salir':

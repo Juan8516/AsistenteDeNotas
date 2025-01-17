@@ -26,3 +26,16 @@ class Acciones:
             print("\n-----------------------")
             print(nota[2])
             print(nota[3])
+    
+    def borrar(self, usuario):
+        print(f"Hola {usuario[1]} vamos a eliminar notas")
+        
+        titulo = input("Ingresa titulo de la nota a eliminar: ")
+        
+        nota = modelo.Nota(usuario[0], titulo)
+        eliminar = nota.eliminar(titulo)
+        
+        if eliminar[0] >= 1:
+            print(f"Se ha eliminado la nota {nota.titulo}")
+        else:
+            print("No se ha eliminado la nota comprueba el titulo a eliminar")
